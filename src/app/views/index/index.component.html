@@ -1,10 +1,104 @@
-<div fullpage id="fullpage2" (ref)="getRef($event)">
-  <div class="section"><h1>Section 1</h1></div>
-  <div class="section"><h1>Section 2</h1></div>
-  <div class="section">
-    <div class="slide"><h1>Slide 2.1</h1></div>
-    <div class="slide"><h1>Slide 3.2</h1></div>
-    <div class="slide"><h1>Slide 3.3</h1></div>
-  </div>
-  <div class="section"><h1>Section 4</h1></div>
+<div id="header" class="header">
+  <nav>
+    <div class="logo">
+      <h4>{{ logo }}</h4>
+    </div>
+    <ul id="menu" class="nav-links">
+      <li data-menuanchor="home">
+        <a href="#home">Home</a>
+      </li>
+      <li data-menuanchor="about">
+        <a href="#about">About</a>
+      </li>
+      <li data-menuanchor="work">
+        <a href="#work">Work</a>
+      </li>
+      <li data-menuanchor="projects">
+        <a href="#projects">Projects</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div id="marker" class="marker">
+  <nav>
+    <ul>
+      <li data-menuanchor="home">
+        <a href="#home">Home</a>
+      </li>
+      <li data-menuanchor="about">
+        <a href="#about">About</a>
+      </li>
+      <li data-menuanchor="work">
+        <a href="#work">Work</a>
+      </li>
+      <li data-menuanchor="projects">
+        <a href="#projects">Projects</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+  <section class="vertical-scrolling">
+    <div class="home container">
+      <div class="banner">
+        <h4>Welcome to</h4>
+        <span class="underline"><h1>{{ username }}</h1></span>
+        <h4>'s</h4>
+      </div>
+      <div></div>
+      <div class="portrait">
+        <img src="../../assets/portrait.png" />
+      </div>
+    </div>
+  </section>
+  <section class="vertical-scrolling">
+    <div class="about container">
+      <div id="profile" class="profile">
+        <div class="description">
+          <p>
+            Hello, I am a senior software developer. I have more than {{ year }} years of C# developing experience.
+            Over those years, I helped on multiple projects and I also architect a web map application.
+          </p>
+          <p>
+            Live, I love hiking, I enjoy reading, I also love movies and enjoy great foods.
+          </p>
+          <p>
+            Work, I am always amazed by new technologies. I like experiencing advanced software concepts.
+          </p>
+        </div>
+        <div class="signature"><span class="underline"> : <sub>x</sub><h1>{{ username }}</h1></span></div>
+      </div>
+      <div id="message" class="message">
+        <form id="msgform">
+          <div class="message-logo-container">
+            <div class="message-logo"></div>
+          </div>
+          <div><input type="email" placeholder="email" autocomplete="nope" required /></div>
+          <div>
+            <textarea form="msgform" placeholder="message" required></textarea>
+          </div>
+          <div><input type="submit" value="Submit" /></div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="vertical-scrolling">
+    <div class="work container">work</div>
+  </section>
+  <section class="vertical-scrolling">
+    <div class="horizontal-scrolling">
+      <div class="container">project 1</div>
+    </div>
+    <div class="horizontal-scrolling">
+      <div class="container">project 2</div>
+    </div>
+    <div class="horizontal-scrolling">
+      <div class="container">project 3</div>
+    </div>
+    <div class="horizontal-scrolling">
+      <div class="container">project 4</div>
+    </div>
+  </section>
 </div>
