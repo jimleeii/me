@@ -58,24 +58,40 @@
       <div id="profile" class="profile">
         <div class="description">
           <p>
-            Hello, I am a senior software developer. I have more than {{ year }} years of C# developing experience.
-            Over those years, I helped on multiple projects and I also architect a web map application.
+            Hello, I am a senior software developer. I have more than
+            {{ year }} years of C# developing experience. Over those years, I
+            helped on multiple projects and I also architect a web map
+            application.
           </p>
           <p>
-            Live, I love hiking, I enjoy reading, I also love movies and enjoy great foods.
+            Live, I love hiking, I enjoy reading, I also love movies and enjoy
+            great foods.
           </p>
           <p>
-            Work, I am always amazed by new technologies. I like experiencing advanced software concepts.
+            Work, I am always amazed by new technologies. I like experiencing
+            advanced software concepts.
           </p>
         </div>
-        <div class="signature"><span class="underline"> : <sub>x</sub><h1>{{ username }}</h1></span></div>
+        <div class="signature">
+          <span class="underline">
+            : <sub>x</sub>
+            <h1>{{ username }}</h1></span
+          >
+        </div>
       </div>
       <div id="message" class="message">
         <form id="msgform">
           <div class="message-logo-container">
             <div class="message-logo"></div>
           </div>
-          <div><input type="email" placeholder="email" autocomplete="nope" required /></div>
+          <div>
+            <input
+              type="email"
+              placeholder="email"
+              autocomplete="nope"
+              required
+            />
+          </div>
           <div>
             <textarea form="msgform" placeholder="message" required></textarea>
           </div>
@@ -85,7 +101,13 @@
     </div>
   </section>
   <section class="vertical-scrolling">
-    <div class="work container">work</div>
+    <div class="work container">
+      <div *ngFor="let work of works" class="card">
+        <img src="{{ work.icon }}" />
+        <h2>{{ work.title }}</h2>
+        <p>{{ work.description }}</p>
+      </div>
+    </div>
   </section>
   <section class="vertical-scrolling">
     <div class="horizontal-scrolling">

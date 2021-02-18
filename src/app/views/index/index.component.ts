@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { timer } from 'rxjs';
+import { Work } from 'src/app/interfaces/work';
 
 @Component({
   selector: 'app-index',
@@ -47,12 +48,16 @@ export class IndexComponent implements OnInit, OnDestroy {
   config;
   fullpage_api;
 
+  works: Work[];
+
   constructor() {
     // this is just an example => for more details on config please visit fullPage.js docs
     this.config = {
-      licenseKey: '',
+      licenseKey: '$7Gc3IC^o6',
       anchors: ['home', 'about', 'work', 'projects'],
       sectionsColor: [this.blue, this.green, this.red, this.yellow],
+      // anchors: ['home', 'about'],
+      // sectionsColor: [this.blue, this.green],
       menu: '#menu',
       sectionSelector: '.vertical-scrolling',
       slideSelector: '.horizontal-scrolling',
@@ -127,13 +132,20 @@ export class IndexComponent implements OnInit, OnDestroy {
     const messagePanel = document.getElementById('message');
     const textarea = messagePanel.getElementsByTagName('textarea')[0];
 
-    console.log(messagePanel.offsetHeight, textarea.offsetHeight);
     textarea.style.height = (messagePanel.offsetHeight - 180) + 'px';
-    console.log(textarea.offsetHeight);
   }
 
   ngOnInit() {
     this.year = this.today.getFullYear() - 2005;
+
+    this.works = [
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' }
+    ];
   }
 
   ngOnDestroy(): void {

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 351.31 344.65">
+  <def>
+    <style>
+      .cls-1 {
+        fill: #fcbf49;
+      }
+
+      .cls-2 {
+        fill: #f77f00;
+      }
+
+      .cls-3 {
+        fill: #d62828;
+      }
+
+      .cls-4 {
+        fill: #003049;
+      }
+
+      .cls-5 {
+        fill: #011627;
+      }
+    </style>
+  </def>
+  <g id="favicon-svg" data-name="favicon-svg">
+    <polygon class="cls-1" points="181.68 163.13 347.6 219.48 181.57 344.65 181.68 163.13"/>
+    <polygon class="cls-2" points="169.83 163.3 169.83 344.6 3.66 219.61 169.83 163.3"/>
+    <polygon class="cls-3" points="166.52 153.37 0 207.76 64.94 5.64 166.52 153.37"/>
+    <polygon class="cls-4" points="175.89 146.83 73.49 0 278.66 0 175.89 146.83"/>
+    <polygon class="cls-5" points="184.64 153.87 286.27 6.47 351.31 208.55 184.64 153.87"/>
+  </g>
+</svg>
