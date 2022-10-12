@@ -129,14 +129,6 @@
               "devServerTarget": "me:serve:production"
             }
           }
-        },
-        "deploy": {
-          "builder": "@netlify-builder/deploy:deploy",
-          "options": {
-            "outputPath": "dist/me",
-            "netlifyToken": "lKno7hOh6bsHHGD9KU2ViIZDgvufUoEU1G-mIIwyLzM",
-            "siteId": "0e463706-51d1-4552-bfce-9314c7047584"
-          }
         }
       }
     }
