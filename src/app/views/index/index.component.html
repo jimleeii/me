@@ -10,10 +10,10 @@
       <li data-menuanchor="about">
         <a href="#about">About</a>
       </li>
-      <li data-menuanchor="work">
+      <li *ngIf="show_works" data-menuanchor="work">
         <a href="#work">Work</a>
       </li>
-      <li data-menuanchor="projects">
+      <li *ngIf="show_projects" data-menuanchor="projects">
         <a href="#projects">Projects</a>
       </li>
     </ul>
@@ -29,10 +29,10 @@
       <li data-menuanchor="about">
         <a href="#about">About</a>
       </li>
-      <li data-menuanchor="work">
+      <li *ngIf="show_works" data-menuanchor="work">
         <a href="#work">Work</a>
       </li>
-      <li data-menuanchor="projects">
+      <li *ngIf="show_projects" data-menuanchor="projects">
         <a href="#projects">Projects</a>
       </li>
     </ul>
@@ -58,7 +58,7 @@
       <div id="profile" class="profile">
         <div class="description">
           <p>
-            Hello, I am a senior software developer. I have more than
+            Hello, I am a technical lead, software developer. I have more than
             {{ year }} years of C# developing experience. Over those years, I
             helped on multiple projects and I also architect a web map
             application.
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div id="message" class="message">
-        <form id="msgform">
+        <form id="msgform" method="post" data-netlify="true">
           <div class="message-logo-container">
             <div class="message-logo"></div>
           </div>
@@ -100,7 +100,7 @@
       </div>
     </div>
   </section>
-  <section class="vertical-scrolling">
+  <section *ngIf="show_works" class="vertical-scrolling">
     <div class="work container">
       <div *ngFor="let work of works" class="card">
         <img src="{{ work.icon }}" />
@@ -109,7 +109,7 @@
       </div>
     </div>
   </section>
-  <section class="vertical-scrolling">
+  <section *ngIf="show_projects"  class="vertical-scrolling">
     <div class="horizontal-scrolling">
       <div class="container">project 1</div>
     </div>

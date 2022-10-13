@@ -48,14 +48,17 @@ export class IndexComponent implements OnInit, OnDestroy {
   config;
   fullpage_api;
 
+  show_works = false;
+  show_projects = false;
+
   works: Work[];
 
   constructor() {
     // this is just an example => for more details on config please visit fullPage.js docs
     this.config = {
       licenseKey: '$7Gc3IC^o6',
-      anchors: ['home', 'about', 'work', 'projects'],
-      sectionsColor: [this.blue, this.green, this.red, this.yellow],
+      anchors: ['home', 'about'],
+      sectionsColor: [this.blue, this.green],
       // anchors: ['home', 'about'],
       // sectionsColor: [this.blue, this.green],
       menu: '#menu',
@@ -64,6 +67,9 @@ export class IndexComponent implements OnInit, OnDestroy {
 
       // events callback
       afterLoad: (origin, destination, direction) => {
+        const nav_link = document.getElementById('menu');
+        nav_link.style.width = '0%';
+
         if (destination.anchor === "home") {
           this.headerColorEvent(this.blue);
         }
@@ -138,14 +144,24 @@ export class IndexComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.year = this.today.getFullYear() - 2005;
 
-    this.works = [
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
-      { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' }
-    ];
+    if (this.show_works) {
+      this.config.anchors.push('work');
+      this.config.sectionsColor.push(this.red);
+
+      this.works = [
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' },
+        { title: 'Winform', description: 'Windows applicaiton', icon: '../../../assets/favicon.svg' }
+      ];
+    }
+
+    if (this.show_projects) {
+      this.config.anchors.push('projects');
+      this.config.sectionsColor.push(this.yellow);
+    }
   }
 
   ngOnDestroy(): void {
